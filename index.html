@@ -6,53 +6,115 @@
     <title>Capybara Squad Games</title>
     <meta
       name="description"
-      content="Capybara Squad Games brings capybara-themed games, quizzes, and offline challenges."
+      content="Capybara Squad Games brings capybara-themed games, quizzes, and offline challenges to iPhone and iPad."
     />
     <meta
       name="apple-itunes-app"
       content="app-id=6758884723, app-argument=https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
     />
-    <meta name="theme-color" content="#f7ead9" />
+    <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1C1C1E" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <!-- Open Graph -->
+    <meta property="og:title" content="Capybara Squad Games" />
+    <meta property="og:description" content="Capybara-themed Games, Quizzes, and Offline Challenges for iPhone and iPad." />
+    <meta property="og:image" content="AppIcon.png" />
     <link rel="icon" type="image/png" href="AppIcon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-bg"></div>
     <main class="landing">
-      <section class="hero">
-        <img
-          class="app-icon"
-          src="AppIcon.png"
-          alt="Capybara Squad Games app icon"
-          width="128"
-          height="128"
-        />
-        <p class="eyebrow">Available on iPhone and iPad</p>
-        <h1>Capybara Squad Games</h1>
-        <p class="tagline">
-          Capybara-themed Games, Quizzes, Offline Challenges, and more!
-        </p>
-        <div class="cta-row">
-          <a
-            class="app-store-button"
-            href="https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Download Capybara Squad Games on the App Store"
-            >Download on the App Store</a
-          >
-          <a class="privacy-link" href="privacy.html">Privacy Policy</a>
-        </div>
-      </section>
-      <section class="screenshot-panel">
-        <img
-          class="screenshot"
-          src="AppScreenshot.png"
-          alt="Gameplay screenshot from Capybara Squad Games"
-        />
-      </section>
+      <div class="landing-inner">
+
+        <!-- Hero -->
+        <section class="hero" aria-label="App overview">
+          <img
+            class="app-icon"
+            src="AppIcon.png"
+            alt="Capybara Squad Games app icon"
+            width="112"
+            height="112"
+          />
+
+          <div>
+            <p class="eyebrow">Available on iPhone &amp; iPad</p>
+            <h1>Capybara<br>Squad Games</h1>
+          </div>
+
+          <p class="tagline">
+            Capybara-themed games, quizzes, and offline challenges for the whole squad.
+          </p>
+
+          <!-- Feature chips -->
+          <div class="feature-chips" role="list" aria-label="Features">
+            <span class="chip" role="listitem">
+              <!-- gamecontroller SF Symbol approximation -->
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <rect x="0.5" y="0.5" width="13" height="9" rx="3" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M3.5 5h2M4.5 4v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="9.5" cy="5" r="0.8" fill="currentColor"/>
+                <circle cx="11" cy="3.5" r="0.8" fill="currentColor"/>
+              </svg>
+              Games
+            </span>
+            <span class="chip" role="listitem">
+              <!-- questionmark.circle approximation -->
+              <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                <circle cx="6" cy="6" r="5.5" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M4.5 4.5C4.5 3.67 5.17 3 6 3s1.5.67 1.5 1.5c0 1-1.5 1.5-1.5 2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="6" cy="9" r="0.6" fill="currentColor"/>
+              </svg>
+              Quizzes
+            </span>
+            <span class="chip" role="listitem">
+              <!-- wifi.slash approximation -->
+              <svg width="14" height="10" viewBox="0 0 14 10" fill="none" aria-hidden="true">
+                <path d="M1 3.5C2.8 1.8 5 1 7 1s4.2.8 6 2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <path d="M3.5 6C4.6 5 5.7 4.5 7 4.5s2.4.5 3.5 1.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+                <circle cx="7" cy="9" r="1" fill="currentColor"/>
+                <line x1="1" y1="9" x2="13" y2="1" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
+              </svg>
+              Offline Play
+            </span>
+          </div>
+
+          <!-- CTA -->
+          <div class="cta-row">
+            <a
+              class="app-store-button"
+              href="https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Download Capybara Squad Games on the App Store"
+            >
+              <!-- Apple logo -->
+              <svg class="apple-logo" viewBox="0 0 18 22" aria-hidden="true">
+                <path d="M14.94 11.44c-.02-2.28 1.86-3.38 1.95-3.44-1.06-1.56-2.72-1.77-3.31-1.79-1.4-.14-2.74.83-3.45.83-.71 0-1.8-.81-2.97-.79-1.52.02-2.92.89-3.7 2.26-1.58 2.74-.41 6.8 1.14 9.02.76 1.09 1.65 2.31 2.83 2.27 1.14-.05 1.57-.73 2.95-.73 1.38 0 1.77.73 2.97.71 1.22-.02 1.99-1.1 2.74-2.2.87-1.26 1.22-2.49 1.24-2.55-.03-.01-2.37-.91-2.39-3.59zM12.56 4.47c.63-.77 1.06-1.83.94-2.9-.91.04-2.01.61-2.66 1.37-.58.67-1.1 1.74-.96 2.77 1.02.08 2.05-.52 2.68-1.24z"/>
+              </svg>
+              <span class="btn-label">
+                <span class="btn-eyebrow">Download on the</span>
+                <span class="btn-title">App Store</span>
+              </span>
+            </a>
+
+            <a class="privacy-link" href="privacy.html">Privacy Policy</a>
+          </div>
+        </section>
+
+        <!-- Screenshot -->
+        <section class="screenshot-panel" aria-label="App screenshot">
+          <div class="screenshot-card">
+            <img
+              class="screenshot"
+              src="AppScreenshot.png"
+              alt="Gameplay screenshot from Capybara Squad Games showing the main game interface"
+              loading="eager"
+            />
+          </div>
+        </section>
+
+      </div>
     </main>
   </body>
 </html>
