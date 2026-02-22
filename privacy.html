@@ -3,72 +3,151 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Privacy Policy — Capybara Squad Games</title>
     <meta
       name="apple-itunes-app"
       content="app-id=6758884723, app-argument=https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
     />
-    <meta name="theme-color" content="#f7ead9" />
+    <meta name="theme-color" content="#F2F2F7" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1C1C1E" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <title>Privacy Policy | Capybara Squad Games</title>
     <link rel="icon" type="image/png" href="AppIcon.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="page-bg"></div>
-    <main class="privacy">
-      <a class="back-link" href="index.html">← Back to landing page</a>
-      <h1>Privacy Policy</h1>
-      <p><strong>Effective date:</strong> 08 February 2026</p>
+    <div class="privacy-page">
 
-      <p>
-        The Capybara Squad App respects your privacy. This app does not collect,
-        store, use, or share any personal or non-personal data from users
-        directly.
-      </p>
+      <!-- Navigation bar -->
+      <nav class="nav-bar" aria-label="Page navigation">
+        <a class="back-link" href="index.html" aria-label="Back to landing page">
+          <!-- Chevron left (SF Symbol approximation) -->
+          <svg viewBox="0 0 10 17" aria-hidden="true">
+            <polyline points="8,1 2,8.5 8,16"/>
+          </svg>
+          Back
+        </a>
+        <span class="nav-title" aria-hidden="true">Privacy Policy</span>
+        <!-- Spacer to balance back button and keep title centered -->
+        <span style="width: 60px; flex-shrink: 0;" aria-hidden="true"></span>
+      </nav>
 
-      <h2>Information Collection</h2>
-      <p>The Capybara Squad App does not collect:</p>
-      <ul>
-        <li>Personal information</li>
-        <li>Usage data</li>
-        <li>Device information</li>
-        <li>Location data</li>
-        <li>Analytics or tracking data</li>
-      </ul>
+      <!-- Content -->
+      <main class="privacy-content">
 
-      <h2>Third-Party Services</h2>
-      <p>
-        The Capybara Squad App uses Apple Game Center for leaderboards and
-        achievements. If you choose to sign in to Game Center, Apple may process
-        data such as your Game Center profile, scores, and achievements according
-        to Apple’s own terms and privacy policy. See
-        <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer"
-          >Apple’s Privacy Policy</a
-        >.
-      </p>
+        <header class="privacy-header">
+          <h1>Privacy Policy</h1>
+          <p class="privacy-meta">Effective date: 8 February 2026</p>
+        </header>
 
-      <h2>Data Security</h2>
-      <p>
-        The app does not directly store or process user data. Any data handled
-        through Apple Game Center is managed by Apple.
-      </p>
+        <!-- Overview -->
+        <div class="privacy-group">
+          <div class="privacy-group-body">
+            <p>
+              The Capybara Squad App respects your privacy. This app does not collect,
+              store, use, or share any personal or non-personal data from users directly.
+            </p>
+          </div>
+        </div>
 
-      <h2>Children’s Privacy</h2>
-      <p>
-        The Capybara Squad App does not collect any information from users of any
-        age, including children under 13.
-      </p>
+        <!-- Information Collection -->
+        <div class="privacy-group">
+          <div class="privacy-group-header">
+            <h2>Information Collection</h2>
+          </div>
+          <div class="privacy-group-body">
+            <p>The Capybara Squad App does not collect:</p>
+            <ul>
+              <li>Personal information</li>
+              <li>Usage data</li>
+              <li>Device information</li>
+              <li>Location data</li>
+              <li>Analytics or tracking data</li>
+            </ul>
+          </div>
+        </div>
 
-      <h2>Changes to This Policy</h2>
-      <p>
-        If this privacy policy changes, the updated version will be made
-        available within the app or on its distribution page.
-      </p>
+        <!-- Third-Party Services -->
+        <div class="privacy-group">
+          <div class="privacy-group-header">
+            <h2>Third-Party Services</h2>
+          </div>
+          <div class="privacy-group-body">
+            <p>
+              The Capybara Squad App uses Apple Game Center for leaderboards and
+              achievements. If you choose to sign in to Game Center, Apple may process
+              data such as your Game Center profile, scores, and achievements according
+              to Apple's own terms and privacy policy. See
+              <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">
+                Apple's Privacy Policy
+              </a>.
+            </p>
+          </div>
+        </div>
 
-      <h2>Contact</h2>
-      <p>If you have any questions about this privacy policy, you may contact us at:</p>
-      <p><a href="mailto:apps@stuartbreckenridge.net">apps@stuartbreckenridge.net</a></p>
-    </main>
+        <!-- Data Security -->
+        <div class="privacy-group">
+          <div class="privacy-group-header">
+            <h2>Data Security</h2>
+          </div>
+          <div class="privacy-group-body">
+            <p>
+              The app does not directly store or process user data. Any data handled
+              through Apple Game Center is managed by Apple.
+            </p>
+          </div>
+        </div>
+
+        <!-- Children's Privacy -->
+        <div class="privacy-group">
+          <div class="privacy-group-header">
+            <h2>Children's Privacy</h2>
+          </div>
+          <div class="privacy-group-body">
+            <p>
+              The Capybara Squad App does not collect any information from users of any
+              age, including children under 13.
+            </p>
+          </div>
+        </div>
+
+        <!-- Changes -->
+        <div class="privacy-group">
+          <div class="privacy-group-header">
+            <h2>Changes to This Policy</h2>
+          </div>
+          <div class="privacy-group-body">
+            <p>
+              If this privacy policy changes, the updated version will be made
+              available within the app or on its distribution page.
+            </p>
+          </div>
+        </div>
+
+        <!-- Contact -->
+        <div class="privacy-group">
+          <div class="privacy-group-header">
+            <h2>Contact</h2>
+          </div>
+          <div class="privacy-group-body">
+            <p style="margin-bottom: 12px;">
+              If you have any questions about this privacy policy, please get in touch.
+            </p>
+            <div class="contact-row">
+              <div class="contact-icon" aria-hidden="true">
+                <!-- envelope SF Symbol approximation -->
+                <svg viewBox="0 0 20 16" fill="none">
+                  <rect x="1" y="1" width="18" height="14" rx="2.5" fill="currentColor" opacity="0.15"/>
+                  <rect x="1" y="1" width="18" height="14" rx="2.5" stroke="currentColor" stroke-width="1.4"/>
+                  <path d="M1.5 3L10 9.5L18.5 3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" fill="none"/>
+                </svg>
+              </div>
+              <a href="mailto:apps@stuartbreckenridge.net">apps@stuartbreckenridge.net</a>
+            </div>
+          </div>
+        </div>
+
+      </main>
+    </div>
   </body>
 </html>
