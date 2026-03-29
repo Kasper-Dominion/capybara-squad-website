@@ -1,5 +1,6 @@
 /* =============================================================================
-   Capybara Squad Games — Apple HIG Design System
+   Capybara Squad Games — Warm Capybara Design System
+   Matches the app's warm peach/cream/caramel aesthetic
    ============================================================================= */
 
 /* ---- Design Tokens ---- */
@@ -7,39 +8,46 @@
   /* System font stack — SF Pro on Apple, falls back gracefully */
   --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                  "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  --font-rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
+                  "Helvetica Neue", Arial, sans-serif;
 
-  /* Brand palette — warm caramel, elevated for premium feel */
-  --brand-primary:   #C06A2E;   /* warm amber-orange */
-  --brand-secondary: #8A4820;   /* deep caramel */
-  --brand-tint:      rgba(192, 106, 46, 0.10);
+  /* Brand palette — warm caramel from the app */
+  --brand-primary:   #9B6A3C;   /* warm brown */
+  --brand-secondary: #7A4F28;   /* deep caramel */
+  --brand-accent:    #E08A3A;   /* orange accent */
+  --brand-tint:      rgba(155, 106, 60, 0.10);
   --brand-tint-dark: rgba(220, 140, 80, 0.15);
 
-  /* Apple semantic backgrounds */
+  /* Warm gradient (app header) */
+  --gradient-header: linear-gradient(180deg, #F5C56E 0%, #EDA94E 40%, #F0C07A 100%);
+
+  /* Warm backgrounds matching the app */
   --bg-primary:   #FFFFFF;
-  --bg-secondary: #F2F2F7;
+  --bg-secondary: #FEF0E1;     /* warm peach/cream — app main bg */
   --bg-tertiary:  #FFFFFF;
-  --bg-grouped:   #F2F2F7;
+  --bg-grouped:   #FEF0E1;
+  --bg-card:      #FFF8F0;     /* slightly warmer white for cards */
 
-  /* Apple label colours */
-  --label-primary:   #000000;
-  --label-secondary: rgba(60, 60, 67, 0.60);
-  --label-tertiary:  rgba(60, 60, 67, 0.30);
+  /* Label colours — brown-tinted */
+  --label-primary:   #3C2415;   /* dark brown instead of black */
+  --label-secondary: rgba(80, 55, 30, 0.60);
+  --label-tertiary:  rgba(80, 55, 30, 0.30);
 
-  /* Apple system colours */
+  /* System colours */
   --system-blue:   #007AFF;
   --system-gray:   #8E8E93;
-  --system-gray5:  #E5E5EA;
-  --system-gray6:  #F2F2F7;
+  --system-gray5:  #E5DDD5;
+  --system-gray6:  #F5EDE5;
 
-  /* Separators */
-  --separator:        rgba(60, 60, 67, 0.29);
-  --separator-opaque: #C6C6C8;
+  /* Separators — warm tinted */
+  --separator:        rgba(155, 106, 60, 0.15);
+  --separator-opaque: #DDD0C2;
 
-  /* Shadows (Apple-style: very low opacity, layered) */
-  --shadow-sm:  0 1px 3px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.06);
-  --shadow-md:  0 4px 12px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.06);
-  --shadow-lg:  0 16px 40px rgba(0,0,0,0.10), 0 4px 8px rgba(0,0,0,0.06);
-  --shadow-xl:  0 32px 64px rgba(0,0,0,0.12), 0 8px 16px rgba(0,0,0,0.08);
+  /* Shadows — warm tinted */
+  --shadow-sm:  0 1px 3px rgba(120,80,30,0.06), 0 1px 2px rgba(120,80,30,0.08);
+  --shadow-md:  0 4px 12px rgba(120,80,30,0.08), 0 2px 4px rgba(120,80,30,0.06);
+  --shadow-lg:  0 16px 40px rgba(120,80,30,0.12), 0 4px 8px rgba(120,80,30,0.08);
+  --shadow-xl:  0 32px 64px rgba(120,80,30,0.14), 0 8px 16px rgba(120,80,30,0.10);
 
   /* Border radii */
   --radius-sm:   8px;
@@ -51,7 +59,7 @@
   --radius-full: 9999px;
 
   /* App icon radius follows iOS formula */
-  --radius-icon: 22.37%;  /* iOS squircle approximation */
+  --radius-icon: 22.37%;
 
   /* 8-pt spacing */
   --space-1:  4px;
@@ -89,24 +97,28 @@
 /* ---- Dark mode ---- */
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg-primary:   #000000;
-    --bg-secondary: #1C1C1E;
-    --bg-tertiary:  #2C2C2E;
-    --bg-grouped:   #000000;
+    --bg-primary:   #1A1008;
+    --bg-secondary: #1A1008;
+    --bg-tertiary:  #2A1E10;
+    --bg-grouped:   #1A1008;
+    --bg-card:      #2A1E10;
 
-    --label-primary:   #FFFFFF;
-    --label-secondary: rgba(235, 235, 245, 0.60);
-    --label-tertiary:  rgba(235, 235, 245, 0.30);
+    --label-primary:   #F5E8D8;
+    --label-secondary: rgba(235, 220, 195, 0.60);
+    --label-tertiary:  rgba(235, 220, 195, 0.30);
 
-    --system-gray5:  #2C2C2E;
-    --system-gray6:  #1C1C1E;
+    --system-gray5:  #2C2218;
+    --system-gray6:  #1C1408;
 
-    --separator:        rgba(84, 84, 88, 0.60);
-    --separator-opaque: #38383A;
+    --separator:        rgba(180, 140, 90, 0.25);
+    --separator-opaque: #3A2E1E;
 
     --brand-primary:   #DC8C50;
     --brand-secondary: #F0A870;
+    --brand-accent:    #E8A050;
     --brand-tint:      rgba(220, 140, 80, 0.15);
+
+    --gradient-header: linear-gradient(180deg, #3A2810 0%, #2A1E0A 100%);
 
     --shadow-sm:  0 1px 3px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.40);
     --shadow-md:  0 4px 12px rgba(0,0,0,0.30), 0 2px 4px rgba(0,0,0,0.40);
@@ -146,7 +158,7 @@ html {
 body {
   font-family: var(--font-system);
   font-size: var(--text-body);
-  line-height: 1.47059; /* Apple body line-height */
+  line-height: 1.47059;
   color: var(--label-primary);
   background-color: var(--bg-secondary);
   min-height: 100vh;
@@ -164,12 +176,12 @@ img {
 }
 
 ::selection {
-  background: rgba(192, 106, 46, 0.25);
+  background: rgba(224, 138, 58, 0.25);
 }
 
 :focus-visible {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(192, 106, 46, 0.40);
+  box-shadow: 0 0 0 4px rgba(155, 106, 60, 0.40);
   border-radius: var(--radius-md);
 }
 
@@ -188,6 +200,20 @@ img {
   padding-right:  calc(var(--space-5) + env(safe-area-inset-right));
   padding-bottom: calc(var(--space-12) + env(safe-area-inset-bottom));
   padding-left:   calc(var(--space-5) + env(safe-area-inset-left));
+}
+
+/* Warm gradient header strip across the top */
+.landing::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 220px;
+  background: var(--gradient-header);
+  z-index: -1;
+  mask-image: linear-gradient(to bottom, black 60%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
 }
 
 .landing-inner {
@@ -214,22 +240,24 @@ img {
 .app-icon {
   width: 96px;
   height: 96px;
-  border-radius: 21.5%;   /* iOS squircle */
+  border-radius: 21.5%;
   box-shadow: var(--shadow-lg);
   flex-shrink: 0;
 }
 
 /* Eyebrow */
 .eyebrow {
+  font-family: var(--font-rounded);
   font-size: var(--text-caption1);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--brand-primary);
+  color: var(--brand-accent);
 }
 
 /* Headline */
 .hero h1 {
+  font-family: var(--font-rounded);
   font-size: clamp(var(--text-title1), 6vw, 56px);
   font-weight: 700;
   line-height: 1.05;
@@ -257,14 +285,15 @@ img {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  padding: 6px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-full);
   background-color: var(--brand-tint);
   color: var(--brand-primary);
+  font-family: var(--font-rounded);
   font-size: var(--text-footnote);
   font-weight: 600;
   letter-spacing: 0.01em;
-  border: 1px solid rgba(192, 106, 46, 0.20);
+  border: 1px solid rgba(155, 106, 60, 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -282,15 +311,15 @@ img {
   flex-wrap: wrap;
 }
 
-/* App Store button — official Apple style */
+/* App Store button — warm caramel style matching the app */
 .app-store-button {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
   padding: 13px 22px;
   min-height: 44px;
-  background-color: var(--label-primary);
-  color: var(--bg-primary);
+  background-color: var(--brand-primary);
+  color: #FFFFFF;
   border-radius: var(--radius-full);
   text-decoration: none;
   font-size: var(--text-subhead);
@@ -307,6 +336,7 @@ img {
 .app-store-button:hover {
   transform: translateY(-2px);
   box-shadow: var(--shadow-lg);
+  background-color: var(--brand-secondary);
 }
 
 .app-store-button:active {
@@ -321,7 +351,7 @@ img {
   fill: currentColor;
   flex-shrink: 0;
   position: relative;
-  top: -1px; /* optical alignment */
+  top: -1px;
 }
 
 .app-store-button .btn-label {
@@ -372,7 +402,7 @@ img {
 }
 
 .screenshot-card {
-  background: var(--bg-tertiary);
+  background: var(--bg-card);
   border-radius: var(--radius-2xl);
   padding: var(--space-3);
   box-shadow: var(--shadow-xl);
@@ -398,7 +428,7 @@ img {
   background-color: var(--bg-grouped);
 }
 
-/* Minimal nav bar */
+/* Minimal nav bar — warm gradient matching the app */
 .nav-bar {
   position: sticky;
   top: 0;
@@ -409,15 +439,16 @@ img {
   padding-top:    env(safe-area-inset-top);
   padding-right:  calc(var(--space-4) + env(safe-area-inset-right));
   padding-left:   calc(var(--space-4) + env(safe-area-inset-left));
-  background-color: rgba(242, 242, 247, 0.80);
+  background: linear-gradient(180deg, rgba(245, 197, 110, 0.85) 0%, rgba(237, 169, 78, 0.80) 100%);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
-  border-bottom: 1px solid var(--separator);
+  border-bottom: 1px solid rgba(155, 106, 60, 0.15);
 }
 
 @media (prefers-color-scheme: dark) {
   .nav-bar {
-    background-color: rgba(0, 0, 0, 0.80);
+    background: linear-gradient(180deg, rgba(58, 40, 16, 0.85) 0%, rgba(42, 30, 10, 0.80) 100%);
+    border-bottom-color: rgba(180, 140, 90, 0.20);
   }
 }
 
@@ -425,18 +456,24 @@ img {
   display: inline-flex;
   align-items: center;
   gap: var(--space-1);
-  color: var(--brand-primary);
+  color: var(--brand-secondary);
   text-decoration: none;
   font-size: var(--text-body);
-  font-weight: 500;
+  font-weight: 600;
   min-height: 44px;
   padding: 4px 0;
   transition: color var(--dur-fast) var(--ease-out);
   -webkit-tap-highlight-color: transparent;
 }
 
+@media (prefers-color-scheme: dark) {
+  .back-link {
+    color: var(--brand-primary);
+  }
+}
+
 .back-link:hover {
-  color: var(--brand-secondary);
+  color: var(--brand-primary);
 }
 
 .back-link svg {
@@ -452,8 +489,9 @@ img {
 .nav-title {
   flex: 1;
   text-align: center;
+  font-family: var(--font-rounded);
   font-size: var(--text-headline);
-  font-weight: 600;
+  font-weight: 700;
   color: var(--label-primary);
 }
 
@@ -475,6 +513,7 @@ img {
 }
 
 .privacy-header h1 {
+  font-family: var(--font-rounded);
   font-size: var(--text-large-title);
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -489,20 +528,22 @@ img {
 
 /* Grouped sections */
 .privacy-group {
-  background: var(--bg-tertiary);
+  background: var(--bg-card);
   border-radius: var(--radius-xl);
   overflow: hidden;
   margin-bottom: var(--space-4);
   box-shadow: var(--shadow-sm);
+  border: 1px solid var(--separator);
 }
 
 .privacy-group-header {
   padding: var(--space-4) var(--space-5);
   border-bottom: 1px solid var(--separator);
-  background: var(--bg-tertiary);
+  background: var(--bg-card);
 }
 
 .privacy-group-header h2 {
+  font-family: var(--font-rounded);
   font-size: var(--text-headline);
   font-weight: 600;
   color: var(--label-primary);
@@ -597,6 +638,10 @@ img {
   .app-icon {
     width: 112px;
     height: 112px;
+  }
+
+  .landing::before {
+    height: 300px;
   }
 }
 
