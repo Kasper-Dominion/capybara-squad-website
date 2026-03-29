@@ -1,55 +1,40 @@
 /* =============================================================================
-   Capybara Squad Games — Warm Capybara Design System
-   Matches the app's warm peach/cream/caramel aesthetic
+   Capybara Squad Games — Fun Warm Design
    ============================================================================= */
 
 /* ---- Design Tokens ---- */
 :root {
-  /* System font stack — SF Pro on Apple, falls back gracefully */
   --font-system: -apple-system, BlinkMacSystemFont, "SF Pro Display",
                  "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
-  --font-rounded: ui-rounded, "SF Pro Rounded", -apple-system, BlinkMacSystemFont,
-                  "Helvetica Neue", Arial, sans-serif;
+  --font-fun: "Chewy", cursive;
 
-  /* Brand palette — warm caramel from the app */
-  --brand-primary:   #9B6A3C;   /* warm brown */
-  --brand-secondary: #7A4F28;   /* deep caramel */
-  --brand-accent:    #E08A3A;   /* orange accent */
+  /* Brand palette */
+  --brand-primary:   #9B6A3C;
+  --brand-secondary: #7A4F28;
+  --brand-accent:    #E08A3A;
   --brand-tint:      rgba(155, 106, 60, 0.10);
-  --brand-tint-dark: rgba(220, 140, 80, 0.15);
 
-  /* Warm gradient (app header) */
-  --gradient-header: linear-gradient(180deg, #F5C56E 0%, #EDA94E 40%, #F0C07A 100%);
+  /* Warm gradient */
+  --gradient-header: linear-gradient(180deg, #F5C56E 0%, #EDA94E 50%, #FEF0E1 100%);
 
-  /* Warm backgrounds matching the app */
+  /* Backgrounds */
   --bg-primary:   #FFFFFF;
-  --bg-secondary: #FEF0E1;     /* warm peach/cream — app main bg */
-  --bg-tertiary:  #FFFFFF;
-  --bg-grouped:   #FEF0E1;
-  --bg-card:      #FFF8F0;     /* slightly warmer white for cards */
+  --bg-page:      #FEF0E1;
+  --bg-card:      #FFF8F0;
 
-  /* Label colours — brown-tinted */
-  --label-primary:   #3C2415;   /* dark brown instead of black */
+  /* Labels */
+  --label-primary:   #3C2415;
   --label-secondary: rgba(80, 55, 30, 0.60);
-  --label-tertiary:  rgba(80, 55, 30, 0.30);
 
-  /* System colours */
-  --system-blue:   #007AFF;
-  --system-gray:   #8E8E93;
-  --system-gray5:  #E5DDD5;
-  --system-gray6:  #F5EDE5;
-
-  /* Separators — warm tinted */
-  --separator:        rgba(155, 106, 60, 0.15);
-  --separator-opaque: #DDD0C2;
-
-  /* Shadows — warm tinted */
+  /* Separators & shadows */
+  --separator: rgba(155, 106, 60, 0.15);
   --shadow-sm:  0 1px 3px rgba(120,80,30,0.06), 0 1px 2px rgba(120,80,30,0.08);
   --shadow-md:  0 4px 12px rgba(120,80,30,0.08), 0 2px 4px rgba(120,80,30,0.06);
   --shadow-lg:  0 16px 40px rgba(120,80,30,0.12), 0 4px 8px rgba(120,80,30,0.08);
-  --shadow-xl:  0 32px 64px rgba(120,80,30,0.14), 0 8px 16px rgba(120,80,30,0.10);
+  --shadow-xl:  0 24px 48px rgba(120,80,30,0.16), 0 8px 16px rgba(120,80,30,0.10);
+  --shadow-phone: 0 20px 60px rgba(80,50,10,0.18), 0 8px 20px rgba(80,50,10,0.12);
 
-  /* Border radii */
+  /* Radii */
   --radius-sm:   8px;
   --radius-md:   12px;
   --radius-lg:   16px;
@@ -58,10 +43,7 @@
   --radius-3xl:  32px;
   --radius-full: 9999px;
 
-  /* App icon radius follows iOS formula */
-  --radius-icon: 22.37%;
-
-  /* 8-pt spacing */
+  /* Spacing */
   --space-1:  4px;
   --space-2:  8px;
   --space-3:  12px;
@@ -74,8 +56,7 @@
   --space-16: 64px;
   --space-20: 80px;
 
-  /* Typography scale */
-  --text-caption2:    11px;
+  /* Typography */
   --text-caption1:    12px;
   --text-footnote:    13px;
   --text-subhead:     15px;
@@ -98,41 +79,35 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --bg-primary:   #1A1008;
-    --bg-secondary: #1A1008;
-    --bg-tertiary:  #2A1E10;
-    --bg-grouped:   #1A1008;
+    --bg-page:      #1A1008;
     --bg-card:      #2A1E10;
 
     --label-primary:   #F5E8D8;
     --label-secondary: rgba(235, 220, 195, 0.60);
-    --label-tertiary:  rgba(235, 220, 195, 0.30);
 
-    --system-gray5:  #2C2218;
-    --system-gray6:  #1C1408;
-
-    --separator:        rgba(180, 140, 90, 0.25);
-    --separator-opaque: #3A2E1E;
+    --separator: rgba(180, 140, 90, 0.25);
 
     --brand-primary:   #DC8C50;
     --brand-secondary: #F0A870;
     --brand-accent:    #E8A050;
     --brand-tint:      rgba(220, 140, 80, 0.15);
 
-    --gradient-header: linear-gradient(180deg, #3A2810 0%, #2A1E0A 100%);
+    --gradient-header: linear-gradient(180deg, #3D2A10 0%, #2A1E0A 50%, #1A1008 100%);
 
-    --shadow-sm:  0 1px 3px rgba(0,0,0,0.30), 0 1px 2px rgba(0,0,0,0.40);
-    --shadow-md:  0 4px 12px rgba(0,0,0,0.30), 0 2px 4px rgba(0,0,0,0.40);
-    --shadow-lg:  0 16px 40px rgba(0,0,0,0.40), 0 4px 8px rgba(0,0,0,0.40);
-    --shadow-xl:  0 32px 64px rgba(0,0,0,0.50), 0 8px 16px rgba(0,0,0,0.40);
+    --shadow-sm:  0 1px 3px rgba(0,0,0,0.30);
+    --shadow-md:  0 4px 12px rgba(0,0,0,0.30);
+    --shadow-lg:  0 16px 40px rgba(0,0,0,0.40);
+    --shadow-xl:  0 24px 48px rgba(0,0,0,0.50);
+    --shadow-phone: 0 20px 60px rgba(0,0,0,0.40);
   }
 }
 
-/* ---- Reduced motion ---- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
     transition-duration: 0.01ms !important;
   }
+  .fade-up { opacity: 1 !important; transform: none !important; }
 }
 
 /* =============================================================================
@@ -158,166 +133,210 @@ html {
 body {
   font-family: var(--font-system);
   font-size: var(--text-body);
-  line-height: 1.47059;
+  line-height: 1.5;
   color: var(--label-primary);
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-page);
   min-height: 100vh;
   min-height: 100dvh;
-  overscroll-behavior-y: none;
+  overflow-x: hidden;
 }
 
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
-img {
-  display: block;
-  max-width: 100%;
-}
+a { -webkit-tap-highlight-color: transparent; }
+img { display: block; max-width: 100%; }
 
 ::selection {
   background: rgba(224, 138, 58, 0.25);
 }
 
-:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(155, 106, 60, 0.40);
-  border-radius: var(--radius-md);
-}
-
 /* =============================================================================
-   Landing Page Layout
+   Scroll Animations
    ============================================================================= */
 
-.landing {
-  min-height: 100vh;
-  min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding-top:    calc(var(--space-12) + env(safe-area-inset-top));
-  padding-right:  calc(var(--space-5) + env(safe-area-inset-right));
-  padding-bottom: calc(var(--space-12) + env(safe-area-inset-bottom));
-  padding-left:   calc(var(--space-5) + env(safe-area-inset-left));
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
 }
 
-/* Warm gradient header strip across the top */
-.landing::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 220px;
-  background: var(--gradient-header);
-  z-index: -1;
-  mask-image: linear-gradient(to bottom, black 60%, transparent);
-  -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent);
+.fade-up.delay-1 {
+  transition-delay: 0.15s;
 }
 
-.landing-inner {
-  width: 100%;
-  max-width: 1080px;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-10);
-  align-items: center;
+.fade-up.delay-2 {
+  transition-delay: 0.3s;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* =============================================================================
    Hero Section
    ============================================================================= */
 
-.hero {
+.hero-section {
+  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
-  animation: hig-fade-up var(--dur-slow) var(--ease-out) both;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-10);
+  padding: calc(var(--space-16) + env(safe-area-inset-top)) var(--space-5) var(--space-12);
+  background: var(--gradient-header);
+  position: relative;
 }
 
-/* App icon */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-4);
+}
+
 .app-icon {
-  width: 96px;
-  height: 96px;
-  border-radius: 21.5%;
+  width: 100px;
+  height: 100px;
+  border-radius: 22%;
   box-shadow: var(--shadow-lg);
-  flex-shrink: 0;
 }
 
-/* Eyebrow */
 .eyebrow {
-  font-family: var(--font-rounded);
-  font-size: var(--text-caption1);
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--brand-accent);
+  font-family: var(--font-fun);
+  font-size: var(--text-subhead);
+  letter-spacing: 0.04em;
+  color: var(--brand-secondary);
 }
 
-/* Headline */
-.hero h1 {
-  font-family: var(--font-rounded);
-  font-size: clamp(var(--text-title1), 6vw, 56px);
-  font-weight: 700;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+.hero-content h1,
+.hero-section h1 {
+  font-family: var(--font-fun);
+  font-size: clamp(36px, 8vw, 64px);
+  font-weight: 400; /* Chewy only has 400 */
+  line-height: 1.1;
   color: var(--label-primary);
 }
 
-/* Tagline */
 .tagline {
-  font-size: clamp(var(--text-subhead), 2.2vw, var(--text-title3));
-  font-weight: 400;
-  line-height: 1.5;
+  font-size: clamp(var(--text-subhead), 2.5vw, var(--text-title3));
   color: var(--label-secondary);
+  max-width: 440px;
+  line-height: 1.5;
+}
+
+/* Phone frame mockup */
+.phone-frame {
+  background: var(--bg-card);
+  border-radius: var(--radius-3xl);
+  padding: 10px;
+  box-shadow: var(--shadow-phone);
+  border: 1px solid var(--separator);
+  max-width: 260px;
+  width: 100%;
+  transition: transform 0.4s var(--ease-spring);
+}
+
+.phone-frame:hover {
+  transform: translateY(-6px) scale(1.02);
+}
+
+.phone-frame img {
+  width: 100%;
+  height: auto;
+  border-radius: calc(var(--radius-3xl) - 6px);
+  display: block;
+}
+
+.hero-phone {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-phone .phone-frame {
+  max-width: 280px;
+}
+
+/* =============================================================================
+   Feature Sections
+   ============================================================================= */
+
+.feature-section {
+  padding: var(--space-20) var(--space-5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-10);
+  position: relative;
+}
+
+.feature-section.alt {
+  background: var(--bg-card);
+}
+
+.feature-text {
+  text-align: center;
   max-width: 520px;
 }
 
-/* Feature chips */
-.feature-chips {
+.feature-text h2 {
+  font-family: var(--font-fun);
+  font-size: clamp(28px, 6vw, 44px);
+  font-weight: 400;
+  color: var(--label-primary);
+  margin-bottom: var(--space-3);
+}
+
+.feature-text p {
+  font-size: clamp(var(--text-subhead), 2vw, var(--text-title3));
+  color: var(--label-secondary);
+  line-height: 1.6;
+}
+
+.feature-phones {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-2);
-}
-
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-1);
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  background-color: var(--brand-tint);
-  color: var(--brand-primary);
-  font-family: var(--font-rounded);
-  font-size: var(--text-footnote);
-  font-weight: 600;
-  letter-spacing: 0.01em;
-  border: 1px solid rgba(155, 106, 60, 0.15);
-}
-
-@media (prefers-color-scheme: dark) {
-  .chip {
-    background-color: var(--brand-tint-dark);
-    border-color: rgba(220, 140, 80, 0.25);
-  }
-}
-
-/* CTA row */
-.cta-row {
-  display: flex;
-  align-items: center;
-  gap: var(--space-4);
+  justify-content: center;
+  gap: var(--space-6);
   flex-wrap: wrap;
 }
 
-/* App Store button — warm caramel style matching the app */
+/* =============================================================================
+   CTA Section
+   ============================================================================= */
+
+.cta-section {
+  padding: var(--space-20) var(--space-5) calc(var(--space-16) + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: var(--space-5);
+  background: var(--gradient-header);
+}
+
+.cta-section .app-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.cta-section h2 {
+  font-family: var(--font-fun);
+  font-size: clamp(24px, 5vw, 36px);
+  font-weight: 400;
+  color: var(--label-primary);
+}
+
+/* =============================================================================
+   App Store Button
+   ============================================================================= */
+
 .app-store-button {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 13px 22px;
-  min-height: 44px;
+  padding: 13px 24px;
+  min-height: 48px;
   background-color: var(--brand-primary);
   color: #FFFFFF;
   border-radius: var(--radius-full);
@@ -334,7 +353,7 @@ img {
 }
 
 .app-store-button:hover {
-  transform: translateY(-2px);
+  transform: translateY(-2px) scale(1.02);
   box-shadow: var(--shadow-lg);
   background-color: var(--brand-secondary);
 }
@@ -344,7 +363,6 @@ img {
   box-shadow: var(--shadow-sm);
 }
 
-/* Apple logo SVG inside button */
 .app-store-button .apple-logo {
   width: 18px;
   height: 18px;
@@ -394,30 +412,69 @@ img {
 }
 
 /* =============================================================================
-   Screenshot Panel
+   Desktop Layout
    ============================================================================= */
 
-.screenshot-panel {
-  animation: hig-fade-up var(--dur-slow) var(--ease-out) 120ms both;
+@media (min-width: 768px) {
+  .hero-section {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--space-16);
+    padding: var(--space-16) var(--space-10);
+  }
+
+  .hero-content {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .hero-phone .phone-frame {
+    max-width: 300px;
+  }
+
+  .phone-frame {
+    max-width: 280px;
+  }
+
+  .feature-section {
+    flex-direction: row;
+    justify-content: center;
+    padding: var(--space-20) var(--space-10);
+  }
+
+  .feature-section:nth-child(odd) {
+    flex-direction: row-reverse;
+  }
+
+  .feature-text {
+    text-align: left;
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .feature-phones {
+    flex: 1;
+    max-width: 600px;
+  }
 }
 
-.screenshot-card {
-  background: var(--bg-card);
-  border-radius: var(--radius-2xl);
-  padding: var(--space-3);
-  box-shadow: var(--shadow-xl);
-  border: 1px solid var(--separator);
-}
+@media (min-width: 1024px) {
+  .hero-phone .phone-frame {
+    max-width: 320px;
+  }
 
-.screenshot {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
-  display: block;
+  .phone-frame {
+    max-width: 280px;
+  }
+
+  .app-icon {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 /* =============================================================================
-   Privacy Policy Page
+   Privacy Policy Page (shared styles)
    ============================================================================= */
 
 .privacy-page {
@@ -425,10 +482,9 @@ img {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
-  background-color: var(--bg-grouped);
+  background-color: var(--bg-page);
 }
 
-/* Minimal nav bar — warm gradient matching the app */
 .nav-bar {
   position: sticky;
   top: 0;
@@ -439,7 +495,7 @@ img {
   padding-top:    env(safe-area-inset-top);
   padding-right:  calc(var(--space-4) + env(safe-area-inset-right));
   padding-left:   calc(var(--space-4) + env(safe-area-inset-left));
-  background: linear-gradient(180deg, rgba(245, 197, 110, 0.85) 0%, rgba(237, 169, 78, 0.80) 100%);
+  background: linear-gradient(180deg, rgba(245, 197, 110, 0.90) 0%, rgba(237, 169, 78, 0.85) 100%);
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border-bottom: 1px solid rgba(155, 106, 60, 0.15);
@@ -447,7 +503,7 @@ img {
 
 @media (prefers-color-scheme: dark) {
   .nav-bar {
-    background: linear-gradient(180deg, rgba(58, 40, 16, 0.85) 0%, rgba(42, 30, 10, 0.80) 100%);
+    background: linear-gradient(180deg, rgba(58, 40, 16, 0.90) 0%, rgba(42, 30, 10, 0.85) 100%);
     border-bottom-color: rgba(180, 140, 90, 0.20);
   }
 }
@@ -467,14 +523,10 @@ img {
 }
 
 @media (prefers-color-scheme: dark) {
-  .back-link {
-    color: var(--brand-primary);
-  }
+  .back-link { color: var(--brand-primary); }
 }
 
-.back-link:hover {
-  color: var(--brand-primary);
-}
+.back-link:hover { color: var(--brand-primary); }
 
 .back-link svg {
   width: 10px;
@@ -489,34 +541,26 @@ img {
 .nav-title {
   flex: 1;
   text-align: center;
-  font-family: var(--font-rounded);
-  font-size: var(--text-headline);
-  font-weight: 700;
+  font-family: var(--font-fun);
+  font-size: var(--text-title3);
+  font-weight: 400;
   color: var(--label-primary);
 }
 
-/* Privacy content */
 .privacy-content {
   flex: 1;
   max-width: 720px;
   width: 100%;
   margin: 0 auto;
-  padding-top:    var(--space-8);
-  padding-right:  calc(var(--space-5) + env(safe-area-inset-right));
-  padding-bottom: calc(var(--space-12) + env(safe-area-inset-bottom));
-  padding-left:   calc(var(--space-5) + env(safe-area-inset-left));
-  animation: hig-fade-up var(--dur-slow) var(--ease-out) both;
+  padding: var(--space-8) var(--space-5) calc(var(--space-12) + env(safe-area-inset-bottom));
 }
 
-.privacy-header {
-  margin-bottom: var(--space-6);
-}
+.privacy-header { margin-bottom: var(--space-6); }
 
 .privacy-header h1 {
-  font-family: var(--font-rounded);
+  font-family: var(--font-fun);
   font-size: var(--text-large-title);
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-weight: 400;
   color: var(--label-primary);
   margin-bottom: var(--space-2);
 }
@@ -526,7 +570,6 @@ img {
   color: var(--label-secondary);
 }
 
-/* Grouped sections */
 .privacy-group {
   background: var(--bg-card);
   border-radius: var(--radius-xl);
@@ -539,13 +582,12 @@ img {
 .privacy-group-header {
   padding: var(--space-4) var(--space-5);
   border-bottom: 1px solid var(--separator);
-  background: var(--bg-card);
 }
 
 .privacy-group-header h2 {
-  font-family: var(--font-rounded);
-  font-size: var(--text-headline);
-  font-weight: 600;
+  font-family: var(--font-fun);
+  font-size: var(--text-title3);
+  font-weight: 400;
   color: var(--label-primary);
 }
 
@@ -560,13 +602,8 @@ img {
   line-height: 1.6;
 }
 
-.privacy-group-body ul {
-  padding-left: var(--space-5);
-}
-
-.privacy-group-body li + li {
-  margin-top: var(--space-2);
-}
+.privacy-group-body ul { padding-left: var(--space-5); }
+.privacy-group-body li + li { margin-top: var(--space-2); }
 
 .privacy-group-body a {
   color: var(--brand-primary);
@@ -581,7 +618,6 @@ img {
   text-underline-offset: 2px;
 }
 
-/* Contact row */
 .contact-row {
   display: flex;
   align-items: center;
@@ -605,57 +641,8 @@ img {
   fill: var(--brand-primary);
 }
 
-/* =============================================================================
-   Desktop / Tablet two-column layout
-   ============================================================================= */
-
-@media (min-width: 768px) {
-  .landing-inner {
-    grid-template-columns: 1fr 1fr;
-    gap: var(--space-12);
-  }
-
-  .hero {
-    animation-delay: 0ms;
-  }
-
-  .screenshot-panel {
-    animation-delay: 80ms;
-  }
-}
-
-@media (min-width: 1024px) {
-  .landing {
-    padding-top:    calc(var(--space-16) + env(safe-area-inset-top));
-    padding-bottom: calc(var(--space-16) + env(safe-area-inset-bottom));
-  }
-
-  .landing-inner {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: var(--space-16);
-  }
-
-  .app-icon {
-    width: 112px;
-    height: 112px;
-  }
-
-  .landing::before {
-    height: 300px;
-  }
-}
-
-/* =============================================================================
-   Keyframes
-   ============================================================================= */
-
-@keyframes hig-fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(16px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(155, 106, 60, 0.40);
+  border-radius: var(--radius-md);
 }
