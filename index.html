@@ -12,7 +12,7 @@
       name="apple-itunes-app"
       content="app-id=6758884723, app-argument=https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
     />
-    <meta name="theme-color" content="#F5C56E" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#FFD23F" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#1A1008" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -24,25 +24,42 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260329" />
+    <link rel="stylesheet" href="styles.css?v=20260422-cartoon" />
   </head>
   <body>
+
+    <!-- Emoji Rain Layer -->
+    <div class="emoji-rain" aria-hidden="true" id="emojiRain"></div>
+
     <main>
 
       <!-- Hero -->
       <section class="hero-section">
+        <!-- Giant stickers -->
+        <div class="sticker s1" aria-hidden="true">⭐</div>
+        <div class="sticker s2 reverse" aria-hidden="true">🎉</div>
+        <div class="sticker s5 fast" aria-hidden="true">💖</div>
+
         <div class="hero-content fade-up">
           <img
-            class="app-icon"
+            class="app-icon wobble"
             src="AppIcon.png"
             alt="Capybara Squad Games app icon"
             width="120"
             height="120"
           />
-          <p class="eyebrow">Available on iPhone &amp; iPad</p>
-          <h1>Capybara<br>Squad Games</h1>
+          <p class="eyebrow">🎮 Available on iPhone &amp; iPad 🎮</p>
+          <h1>
+            <span class="bouncy" aria-label="Capybara">
+              <span class="bouncy-letter">C</span><span class="bouncy-letter">a</span><span class="bouncy-letter">p</span><span class="bouncy-letter">y</span><span class="bouncy-letter">b</span><span class="bouncy-letter">a</span><span class="bouncy-letter">r</span><span class="bouncy-letter">a</span>
+            </span>
+            <br>
+            <span class="bouncy" aria-label="Squad Games">
+              <span class="bouncy-letter">S</span><span class="bouncy-letter">q</span><span class="bouncy-letter">u</span><span class="bouncy-letter">a</span><span class="bouncy-letter">d</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">G</span><span class="bouncy-letter">a</span><span class="bouncy-letter">m</span><span class="bouncy-letter">e</span><span class="bouncy-letter">s</span>
+            </span>
+          </h1>
           <p class="tagline">
-            Games, quizzes, and offline challenges for the whole squad.
+            ✨ Games, quizzes, and offline challenges for the whole squad! ✨
           </p>
           <a
             class="app-store-button"
@@ -73,11 +90,21 @@
         </div>
       </section>
 
+      <!-- Silly Marquee -->
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>🦫 SO MUCH FUN! 🎲 TAP TAP TAP! 🎨 DRAW SILLY STUFF! 🧩 QUIZ TIME! 🏆 HIGH SCORES! 🌟 CAPY POWER! 🎪 </span>
+          <span>🦫 SO MUCH FUN! 🎲 TAP TAP TAP! 🎨 DRAW SILLY STUFF! 🧩 QUIZ TIME! 🏆 HIGH SCORES! 🌟 CAPY POWER! 🎪 </span>
+        </div>
+      </div>
+
       <!-- Feature: Games -->
       <section class="feature-section">
+        <div class="sticker s3 slow" aria-hidden="true">🎲</div>
+        <div class="sticker s4" aria-hidden="true">🧩</div>
         <div class="feature-text fade-up">
-          <h2>Tons of Games</h2>
-          <p>From capybara quizzes to memory challenges, tap games, and treasure trails. There's always something new to play.</p>
+          <h2><span class="bouncy"><span class="bouncy-letter">T</span><span class="bouncy-letter">o</span><span class="bouncy-letter">n</span><span class="bouncy-letter">s</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">o</span><span class="bouncy-letter">f</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">G</span><span class="bouncy-letter">a</span><span class="bouncy-letter">m</span><span class="bouncy-letter">e</span><span class="bouncy-letter">s</span><span class="bouncy-letter">!</span></span></h2>
+          <p>From capybara quizzes to memory challenges, tap games, and treasure trails. There's always something new to play! 🎮</p>
         </div>
         <div class="feature-phones">
           <div class="phone-frame fade-up delay-1">
@@ -99,9 +126,11 @@
 
       <!-- Feature: Challenge -->
       <section class="feature-section alt">
+        <div class="sticker s5 reverse" aria-hidden="true">🏆</div>
+        <div class="sticker s6 fast" aria-hidden="true">⚡</div>
         <div class="feature-text fade-up">
-          <h2>Challenge Yourself</h2>
-          <p>Test your precision, beat your best scores, and share your results with friends.</p>
+          <h2><span class="bouncy"><span class="bouncy-letter">C</span><span class="bouncy-letter">h</span><span class="bouncy-letter">a</span><span class="bouncy-letter">l</span><span class="bouncy-letter">l</span><span class="bouncy-letter">e</span><span class="bouncy-letter">n</span><span class="bouncy-letter">g</span><span class="bouncy-letter">e</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">T</span><span class="bouncy-letter">i</span><span class="bouncy-letter">m</span><span class="bouncy-letter">e</span><span class="bouncy-letter">!</span></span></h2>
+          <p>Test your precision, beat your best scores, and share your results with friends! 🏆💨</p>
         </div>
         <div class="feature-phones">
           <div class="phone-frame fade-up delay-1">
@@ -116,9 +145,11 @@
 
       <!-- Feature: Creative -->
       <section class="feature-section">
+        <div class="sticker s3" aria-hidden="true">🎨</div>
+        <div class="sticker s4 reverse slow" aria-hidden="true">🌈</div>
         <div class="feature-text fade-up">
-          <h2>Get Creative</h2>
-          <p>Draw on the whiteboard, print DIY activities, and discover special edition content throughout the year.</p>
+          <h2><span class="bouncy"><span class="bouncy-letter">G</span><span class="bouncy-letter">e</span><span class="bouncy-letter">t</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">C</span><span class="bouncy-letter">r</span><span class="bouncy-letter">e</span><span class="bouncy-letter">a</span><span class="bouncy-letter">t</span><span class="bouncy-letter">i</span><span class="bouncy-letter">v</span><span class="bouncy-letter">e</span><span class="bouncy-letter">!</span></span></h2>
+          <p>Draw on the whiteboard, print DIY activities, and discover special edition content all year long! 🎨✏️</p>
         </div>
         <div class="feature-phones">
           <div class="phone-frame fade-up delay-1">
@@ -140,14 +171,16 @@
 
       <!-- Final CTA -->
       <section class="cta-section fade-up">
+        <div class="sticker s1 fast" aria-hidden="true">🎁</div>
+        <div class="sticker s2" aria-hidden="true">🚀</div>
         <img
-          class="app-icon"
+          class="app-icon wobble"
           src="AppIcon.png"
           alt="Capybara Squad Games app icon"
           width="88"
           height="88"
         />
-        <h2>Ready to join the squad?</h2>
+        <h2><span class="bouncy"><span class="bouncy-letter">J</span><span class="bouncy-letter">o</span><span class="bouncy-letter">i</span><span class="bouncy-letter">n</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">T</span><span class="bouncy-letter">h</span><span class="bouncy-letter">e</span><span class="bouncy-letter">&nbsp;</span><span class="bouncy-letter">S</span><span class="bouncy-letter">q</span><span class="bouncy-letter">u</span><span class="bouncy-letter">a</span><span class="bouncy-letter">d</span><span class="bouncy-letter">!</span></span></h2>
         <a
           class="app-store-button"
           href="https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
@@ -163,13 +196,14 @@
             <span class="btn-title">App Store</span>
           </span>
         </a>
-        <a class="privacy-link" href="privacy.html">Privacy Policy</a>
-        <a class="privacy-link kasper-link" href="https://kasperdominion.com" target="_blank" rel="noopener noreferrer">Part of Kasper Dominion</a>
+        <a class="privacy-link" href="privacy.html">🔒 Privacy Policy</a>
+        <a class="privacy-link kasper-link" href="https://kasperdominion.com" target="_blank" rel="noopener noreferrer">👑 Part of Kasper Dominion</a>
       </section>
 
     </main>
 
     <script>
+      /* ---- Scroll reveal ---- */
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -181,12 +215,58 @@
             observer.unobserve(entry.target);
           }
         });
-      }, {
-        threshold: 0.1,
-        rootMargin: '0px 0px -30px 0px'
-      });
-
+      }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
       document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+      /* ---- Emoji Rain ---- */
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!prefersReducedMotion) {
+        const rainRoot = document.getElementById('emojiRain');
+        const emojis = ['🦫','🎈','⭐','🎉','🍭','🌈','🎨','🧩','🎲','💖','✨','🏆','🎮','🍩','🧸','🎁','🌟','🫧'];
+        const EMOJI_COUNT = 26;
+        for (let i = 0; i < EMOJI_COUNT; i++) {
+          const s = document.createElement('span');
+          s.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          s.style.left = (Math.random() * 100) + 'vw';
+          s.style.fontSize = (22 + Math.random() * 28) + 'px';
+          const duration = 9 + Math.random() * 10;
+          s.style.animationDuration = duration + 's';
+          s.style.animationDelay = (-Math.random() * duration) + 's';
+          s.style.opacity = (0.55 + Math.random() * 0.35).toFixed(2);
+          rainRoot.appendChild(s);
+        }
+      }
+
+      /* ---- Confetti Blast on Click ---- */
+      const CONFETTI_COLORS = ['#FF6FA3','#FFD23F','#5BC0EB','#7CD66C','#B084FF','#FF9F45','#E84D4D'];
+      function blastConfetti(x, y) {
+        if (prefersReducedMotion) return;
+        const N = 36;
+        for (let i = 0; i < N; i++) {
+          const piece = document.createElement('div');
+          piece.className = 'confetti-piece';
+          piece.style.left = x + 'px';
+          piece.style.top = y + 'px';
+          piece.style.background = CONFETTI_COLORS[Math.floor(Math.random() * CONFETTI_COLORS.length)];
+          const angle = (Math.PI * 2 * i) / N + (Math.random() * 0.6 - 0.3);
+          const distance = 80 + Math.random() * 180;
+          const tx = Math.cos(angle) * distance;
+          const ty = Math.sin(angle) * distance + Math.random() * 120;
+          const tr = (Math.random() * 1440 - 720) + 'deg';
+          piece.style.setProperty('--tx', tx + 'px');
+          piece.style.setProperty('--ty', ty + 'px');
+          piece.style.setProperty('--tr', tr);
+          piece.style.width = (8 + Math.random() * 10) + 'px';
+          piece.style.height = (12 + Math.random() * 14) + 'px';
+          piece.style.animationDuration = (1.2 + Math.random() * 0.8) + 's';
+          document.body.appendChild(piece);
+          setTimeout(() => piece.remove(), 2200);
+        }
+      }
+
+      document.addEventListener('click', (e) => {
+        blastConfetti(e.clientX, e.clientY);
+      });
     </script>
   </body>
 </html>
