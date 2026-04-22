@@ -27,6 +27,14 @@
     <link rel="stylesheet" href="styles.css?v=20260329" />
   </head>
   <body>
+    <div class="sticker sticker-star" aria-hidden="true">⭐</div>
+    <div class="sticker sticker-rainbow" aria-hidden="true">🌈</div>
+    <div class="marquee-wrap" aria-hidden="true">
+      <div class="marquee-track">
+        <span>🎉 CAPYBARA PARTY MODE 🎉 GIANT GAMES 🎉 QUIZZY TIME 🎉 OFFLINE FUN 🎉</span>
+        <span>🎉 CAPYBARA PARTY MODE 🎉 GIANT GAMES 🎉 QUIZZY TIME 🎉 OFFLINE FUN 🎉</span>
+      </div>
+    </div>
     <main>
 
       <!-- Hero -->
@@ -40,7 +48,10 @@
             height="120"
           />
           <p class="eyebrow">Available on iPhone &amp; iPad</p>
-          <h1>Capybara<br>Squad Games</h1>
+          <h1 class="bouncy-title" aria-label="Capybara Squad Games">
+            <span>Capybara</span>
+            <span>Squad Games</span>
+          </h1>
           <p class="tagline">
             Games, quizzes, and offline challenges for the whole squad.
           </p>
@@ -63,7 +74,7 @@
 
         <!-- Hero phone mockup -->
         <div class="hero-phone fade-up delay-1">
-          <div class="phone-frame">
+          <div class="phone-frame tilt-phone">
             <img
               src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.52.16.png"
               alt="Capybara Squad Games list showing all available games"
@@ -80,14 +91,14 @@
           <p>From capybara quizzes to memory challenges, tap games, and treasure trails. There's always something new to play.</p>
         </div>
         <div class="feature-phones">
-          <div class="phone-frame fade-up delay-1">
+          <div class="phone-frame fade-up delay-1 tilt-phone">
             <img
               src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.52.31.png"
               alt="Capybara Quiz gameplay with multiple choice questions"
               loading="lazy"
             />
           </div>
-          <div class="phone-frame fade-up delay-2">
+          <div class="phone-frame fade-up delay-2 tilt-phone">
             <img
               src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.52.48.png"
               alt="Memory Flip card matching game"
@@ -104,7 +115,7 @@
           <p>Test your precision, beat your best scores, and share your results with friends.</p>
         </div>
         <div class="feature-phones">
-          <div class="phone-frame fade-up delay-1">
+          <div class="phone-frame fade-up delay-1 tilt-phone">
             <img
               src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.53.06.png"
               alt="Precision Timer game with score results"
@@ -121,14 +132,14 @@
           <p>Draw on the whiteboard, print DIY activities, and discover special edition content throughout the year.</p>
         </div>
         <div class="feature-phones">
-          <div class="phone-frame fade-up delay-1">
+          <div class="phone-frame fade-up delay-1 tilt-phone">
             <img
               src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.53.24.png"
               alt="Whiteboard drawing canvas"
               loading="lazy"
             />
           </div>
-          <div class="phone-frame fade-up delay-2">
+          <div class="phone-frame fade-up delay-2 tilt-phone">
             <img
               src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.53.15.png"
               alt="Special Edition CNY 2026 maze activity"
@@ -170,6 +181,38 @@
     </main>
 
     <script>
+      const confettiColors = ['#ff5fa2', '#ffd147', '#7afcff', '#8bff9b', '#b388ff'];
+
+      function createConfettiBurst(x, y) {
+        for (let i = 0; i < 28; i += 1) {
+          const confetti = document.createElement('span');
+          confetti.className = 'confetti-piece';
+          confetti.style.left = `${x}px`;
+          confetti.style.top = `${y}px`;
+          confetti.style.background = confettiColors[Math.floor(Math.random() * confettiColors.length)];
+          confetti.style.setProperty('--dx', `${(Math.random() - 0.5) * 220}px`);
+          confetti.style.setProperty('--dy', `${(Math.random() - 0.7) * 240}px`);
+          confetti.style.setProperty('--dr', `${(Math.random() - 0.5) * 600}deg`);
+          confetti.style.animationDelay = `${Math.random() * 0.15}s`;
+          document.body.appendChild(confetti);
+          confetti.addEventListener('animationend', () => confetti.remove(), { once: true });
+        }
+      }
+
+      function startEmojiRain() {
+        const emojis = ['🦫', '🎈', '🧁', '🌟', '🍭', '🎮', '💥', '🧃'];
+        setInterval(() => {
+          const emoji = document.createElement('span');
+          emoji.className = 'emoji-drop';
+          emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          emoji.style.left = `${Math.random() * 100}vw`;
+          emoji.style.animationDuration = `${5 + Math.random() * 4}s`;
+          emoji.style.fontSize = `${18 + Math.random() * 28}px`;
+          document.body.appendChild(emoji);
+          emoji.addEventListener('animationend', () => emoji.remove(), { once: true });
+        }, 550);
+      }
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -187,6 +230,8 @@
       });
 
       document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+      document.addEventListener('click', (event) => createConfettiBurst(event.clientX, event.clientY));
+      startEmojiRain();
     </script>
   </body>
 </html>

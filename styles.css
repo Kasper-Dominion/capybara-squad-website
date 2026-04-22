@@ -108,6 +108,7 @@
     transition-duration: 0.01ms !important;
   }
   .fade-up { opacity: 1 !important; transform: none !important; }
+  .marquee-wrap, .sticker, .emoji-drop, .confetti-piece { display: none !important; }
 }
 
 /* =============================================================================
@@ -143,9 +144,105 @@ body {
 
 a { -webkit-tap-highlight-color: transparent; }
 img { display: block; max-width: 100%; }
+main { position: relative; z-index: 2; }
 
 ::selection {
   background: rgba(224, 138, 58, 0.25);
+}
+
+/* =============================================================================
+   Cartoon Effects
+   ============================================================================= */
+
+.marquee-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 30;
+  overflow: hidden;
+  background: linear-gradient(90deg, #ff7ac8, #ffd84d, #7de9ff, #90ff91);
+  border-bottom: 4px dashed rgba(60, 36, 21, 0.35);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.16);
+  transform: rotate(-1deg) scale(1.02);
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: silly-marquee 14s linear infinite;
+  padding: 8px 0;
+}
+
+.marquee-track span {
+  font-family: var(--font-fun);
+  font-size: clamp(20px, 3vw, 32px);
+  letter-spacing: 0.05em;
+  color: #402400;
+  text-shadow: 2px 2px 0 #fff;
+}
+
+.sticker {
+  position: fixed;
+  z-index: 25;
+  font-size: clamp(62px, 10vw, 130px);
+  filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.2));
+  pointer-events: none;
+}
+
+.sticker-star {
+  top: 72px;
+  right: 12px;
+  animation: spin-bounce 4s ease-in-out infinite;
+}
+
+.sticker-rainbow {
+  top: 180px;
+  left: -12px;
+  animation: spin-bounce 5s ease-in-out infinite reverse;
+}
+
+.bouncy-title {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bouncy-title span {
+  display: inline-block;
+  animation: bounce-wobble 1.4s ease-in-out infinite;
+}
+
+.bouncy-title span:last-child {
+  animation-delay: 0.25s;
+}
+
+.tilt-phone {
+  transform-style: preserve-3d;
+  animation: tilt-pop 4.4s ease-in-out infinite;
+}
+
+.feature-phones .tilt-phone:nth-child(even) {
+  animation-delay: 0.7s;
+}
+
+.confetti-piece {
+  position: fixed;
+  width: 11px;
+  height: 18px;
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 80;
+  animation: confetti-pop 1.15s ease-out forwards;
+}
+
+.emoji-drop {
+  position: fixed;
+  top: -10vh;
+  pointer-events: none;
+  z-index: 24;
+  animation: emoji-rain linear forwards;
 }
 
 /* =============================================================================
@@ -183,7 +280,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   justify-content: center;
   gap: var(--space-10);
-  padding: calc(var(--space-16) + env(safe-area-inset-top)) var(--space-5) var(--space-12);
+  padding: calc(var(--space-20) + env(safe-area-inset-top)) var(--space-5) var(--space-12);
   background: var(--gradient-header);
   position: relative;
 }
@@ -471,6 +568,41 @@ img { display: block; max-width: 100%; }
     width: 120px;
     height: 120px;
   }
+}
+
+@keyframes silly-marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes bounce-wobble {
+  0%, 100% { transform: translateY(0) rotate(-2deg) scale(1); }
+  25% { transform: translateY(-9px) rotate(2deg) scale(1.03); }
+  55% { transform: translateY(3px) rotate(-1deg) scale(0.99); }
+  75% { transform: translateY(-4px) rotate(1deg); }
+}
+
+@keyframes tilt-pop {
+  0%, 100% { transform: perspective(1000px) rotateY(-10deg) rotateX(3deg) translateY(0); }
+  30% { transform: perspective(1000px) rotateY(12deg) rotateX(-3deg) translateY(-8px); }
+  60% { transform: perspective(1000px) rotateY(-6deg) rotateX(4deg) translateY(4px) scale(1.02); }
+}
+
+@keyframes spin-bounce {
+  0%, 100% { transform: rotate(-7deg) scale(0.95); }
+  40% { transform: rotate(11deg) scale(1.08) translateY(-8px); }
+  60% { transform: rotate(-2deg) scale(0.97) translateY(4px); }
+}
+
+@keyframes emoji-rain {
+  0% { transform: translateY(-10vh) rotate(0deg); opacity: 0; }
+  10% { opacity: 1; }
+  100% { transform: translateY(120vh) rotate(300deg); opacity: 0; }
+}
+
+@keyframes confetti-pop {
+  0% { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; }
+  100% { transform: translate(var(--dx), var(--dy)) rotate(var(--dr)) scale(0.25); opacity: 0; }
 }
 
 /* =============================================================================
