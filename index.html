@@ -23,10 +23,22 @@
     <link rel="icon" type="image/png" href="AppIcon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260425-merch" />
+    <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css?v=20260905-polish" />
   </head>
   <body>
+    <dialog class="ops-modal" id="opsModal" aria-labelledby="opsModalTitle">
+      <div class="ops-modal-card">
+        <span class="ops-modal-icon" aria-hidden="true">🛑</span>
+        <h2 id="opsModalTitle">Operations are paused</h2>
+        <p>
+          The squad is taking a break. We&rsquo;re back on
+          <time datetime="2026-10-27">27 October 2026</time>.
+        </p>
+        <button class="ops-modal-button" type="button" autofocus>Got it</button>
+      </div>
+    </dialog>
+
     <main>
 
       <!-- Hero -->
@@ -77,7 +89,7 @@
       </section>
 
       <!-- Feature: Games -->
-      <section class="feature-section">
+      <section class="feature-section" id="games">
         <span class="decor decor-sm section-decor-tl float" aria-hidden="true">🎲</span>
         <span class="decor decor-sm section-decor-br float delay-b" aria-hidden="true">🧩</span>
 
@@ -104,7 +116,7 @@
       </section>
 
       <!-- Feature: Challenge -->
-      <section class="feature-section alt">
+      <section class="feature-section alt" id="challenge">
         <span class="decor decor-sm section-decor-tr float delay-a" aria-hidden="true">🏆</span>
         <span class="decor decor-sm section-decor-bl float delay-c" aria-hidden="true">⚡</span>
 
@@ -124,7 +136,7 @@
       </section>
 
       <!-- Feature: Creative -->
-      <section class="feature-section">
+      <section class="feature-section" id="creative">
         <span class="decor decor-sm section-decor-tl float delay-a" aria-hidden="true">🎨</span>
         <span class="decor decor-sm section-decor-br float delay-b" aria-hidden="true">🌈</span>
 
@@ -151,7 +163,7 @@
       </section>
 
       <!-- Merch -->
-      <section class="merch-section feature-section alt">
+      <section class="merch-section feature-section alt" id="merch">
         <span class="decor decor-sm section-decor-tl float delay-b" aria-hidden="true">👕</span>
         <span class="decor decor-sm section-decor-tr float delay-a" aria-hidden="true">☕</span>
         <span class="decor decor-sm section-decor-bl float delay-c" aria-hidden="true">🛍️</span>
@@ -287,7 +299,7 @@
       </section>
 
       <!-- Final CTA -->
-      <section class="cta-section fade-up">
+      <section class="cta-section fade-up" id="get-the-app">
         <span class="decor decor-sm section-decor-tl float" aria-hidden="true">🎉</span>
         <span class="decor decor-sm section-decor-tr float delay-b" aria-hidden="true">🌟</span>
 
@@ -323,6 +335,24 @@
     </main>
 
     <script>
+      // Operations paused notice
+      (() => {
+        const modal = document.getElementById('opsModal');
+        if (!modal) return;
+        const close = () => { if (modal.open) modal.close(); };
+
+        if (typeof modal.showModal === 'function') {
+          modal.showModal();
+        } else {
+          modal.setAttribute('open', '');
+        }
+
+        modal.querySelector('.ops-modal-button').addEventListener('click', close);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) close();
+        });
+      })();
+
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
