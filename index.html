@@ -8,6 +8,7 @@
       name="description"
       content="Capybara Squad Games brings capybara-themed games, quizzes, and offline challenges to iPhone and iPad."
     />
+    <link rel="canonical" href="https://capybarasquad.app/" />
     <meta
       name="apple-itunes-app"
       content="app-id=6758884723, app-argument=https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
@@ -16,17 +17,98 @@
     <meta name="theme-color" content="#1A1008" media="(prefers-color-scheme: dark)" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- Preload Hero Image (LCP) -->
+    <link
+      rel="preload"
+      as="image"
+      href="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.16.avif"
+      type="image/avif"
+    />
+
     <!-- Open Graph -->
     <meta property="og:title" content="Capybara Squad Games" />
     <meta property="og:description" content="Capybara-themed games, quizzes, and offline challenges for iPhone and iPad." />
-    <meta property="og:image" content="AppIcon.png" />
-    <link rel="icon" type="image/png" href="AppIcon.png" />
+    <meta property="og:url" content="https://capybarasquad.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://capybarasquad.app/AppIcon.png" />
+    <meta property="og:image:width" content="512" />
+    <meta property="og:image:height" content="512" />
+    <meta property="og:image:alt" content="Capybara Squad Games App Icon" />
+    <meta property="og:site_name" content="Capybara Squad Games" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Capybara Squad Games" />
+    <meta name="twitter:description" content="Capybara-themed games, quizzes, and offline challenges for iPhone and iPad." />
+    <meta name="twitter:image" content="https://capybarasquad.app/AppIcon.png" />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Capybara Squad Games",
+      "operatingSystem": "iOS 17.0 or later",
+      "applicationCategory": "GameApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "url": "https://capybarasquad.app/",
+      "installUrl": "https://apps.apple.com/us/app/capybara-squad-games/id6758884723",
+      "image": "https://capybarasquad.app/AppIcon.png",
+      "description": "Capybara Squad Games brings capybara-themed games, quizzes, and offline challenges to iPhone and iPad.",
+      "author": {
+        "@type": "Organization",
+        "name": "Kasper Dominion",
+        "url": "https://kasperdominion.com"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Nunito:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=20260905-polish" />
   </head>
   <body>
+    <!-- Skip to Content for Keyboard Accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Top Header Navigation -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="#" class="header-brand" aria-label="Capybara Squad Home">
+          <picture>
+            <source srcset="AppIcon.avif" type="image/avif" />
+            <img src="AppIcon.png" alt="" width="32" height="32" class="header-logo" />
+          </picture>
+          <span class="header-title">Capybara Squad</span>
+        </a>
+        <nav class="header-nav" aria-label="Main Navigation">
+          <a href="#games" class="nav-link">Games</a>
+          <a href="#merch" class="nav-link">Merch</a>
+          <a href="privacy.html" class="nav-link">Privacy</a>
+        </nav>
+        <a
+          class="header-cta"
+          href="https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Download Capybara Squad Games on the App Store"
+        >
+          <span>Get App</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Operations Modal (Dismissal Remembered) -->
     <dialog class="ops-modal" id="opsModal" aria-labelledby="opsModalTitle">
       <div class="ops-modal-card">
         <span class="ops-modal-icon" aria-hidden="true">🛑</span>
@@ -39,7 +121,7 @@
       </div>
     </dialog>
 
-    <main>
+    <main id="main-content">
 
       <!-- Hero -->
       <section class="hero-section">
@@ -48,13 +130,24 @@
         <span class="decor decor-sm hero-decor-3 float delay-a" aria-hidden="true">🎈</span>
 
         <div class="hero-content fade-up">
-          <img
-            class="app-icon"
-            src="AppIcon.png"
-            alt="Capybara Squad Games app icon"
-            width="120"
-            height="120"
-          />
+          <div class="hero-icon-wrap" id="heroIconWrap">
+            <picture>
+              <source srcset="AppIcon.avif" type="image/avif" />
+              <img
+                class="app-icon"
+                id="interactiveAppIcon"
+                src="AppIcon.png"
+                alt="Capybara Squad Games app icon - click for a surprise!"
+                width="120"
+                height="120"
+                role="button"
+                tabindex="0"
+                title="Click for a cheerful surprise!"
+                aria-label="Interactive Capybara Squad icon. Press or click for a surprise"
+              />
+            </picture>
+            <div class="emoji-burst-container" id="emojiBurstContainer" aria-hidden="true"></div>
+          </div>
           <p class="eyebrow">Available on iPhone &amp; iPad</p>
           <h1>Capybara<br><span class="accent">Squad Games</span></h1>
           <p class="tagline">
@@ -75,15 +168,31 @@
               <span class="btn-title">App Store</span>
             </span>
           </a>
+
+          <!-- Trust & Quality Badges -->
+          <div class="trust-badges" aria-label="Key app features">
+            <span class="trust-badge"><span class="badge-icon" aria-hidden="true">🔒</span> 100% Private</span>
+            <span class="trust-badge"><span class="badge-icon" aria-hidden="true">✈️</span> Offline Ready</span>
+            <span class="trust-badge"><span class="badge-icon" aria-hidden="true">🏆</span> Game Center</span>
+            <span class="trust-badge"><span class="badge-icon" aria-hidden="true">🚫</span> Zero Ads</span>
+          </div>
         </div>
 
         <div class="hero-phone fade-up delay-1">
           <div class="phone-frame">
-            <img
-              src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.52.16.png"
-              alt="Capybara Squad Games list showing all available games"
-              loading="eager"
-            />
+            <picture>
+              <source
+                srcset="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.16.avif"
+                type="image/avif"
+              />
+              <img
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.16.png"
+                alt="Capybara Squad Games list showing all available games"
+                width="440"
+                height="956"
+                loading="eager"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -99,18 +208,34 @@
         </div>
         <div class="feature-phones">
           <div class="phone-frame fade-up delay-1">
-            <img
-              src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.52.31.png"
-              alt="Capybara Quiz gameplay with multiple choice questions"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                srcset="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.31.avif"
+                type="image/avif"
+              />
+              <img
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.31.png"
+                alt="Capybara Quiz gameplay with multiple choice questions"
+                width="440"
+                height="956"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="phone-frame fade-up delay-2">
-            <img
-              src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.52.48.png"
-              alt="Memory Flip card matching game"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                srcset="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.48.avif"
+                type="image/avif"
+              />
+              <img
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.52.48.png"
+                alt="Memory Flip card matching game"
+                width="440"
+                height="956"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -126,11 +251,19 @@
         </div>
         <div class="feature-phones">
           <div class="phone-frame fade-up delay-1">
-            <img
-              src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.53.06.png"
-              alt="Precision Timer game with score results"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                srcset="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.53.06.avif"
+                type="image/avif"
+              />
+              <img
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.53.06.png"
+                alt="Precision Timer game with score results"
+                width="440"
+                height="956"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -146,18 +279,34 @@
         </div>
         <div class="feature-phones">
           <div class="phone-frame fade-up delay-1">
-            <img
-              src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.53.24.png"
-              alt="Whiteboard drawing canvas"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                srcset="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.53.24.avif"
+                type="image/avif"
+              />
+              <img
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.53.24.png"
+                alt="Whiteboard drawing canvas"
+                width="440"
+                height="956"
+                loading="lazy"
+              />
+            </picture>
           </div>
           <div class="phone-frame fade-up delay-2">
-            <img
-              src="screenshots/Simulator Screenshot - iPhone 17 Pro Max - 2026-03-29 at 14.53.15.png"
-              alt="Special Edition CNY 2026 maze activity"
-              loading="lazy"
-            />
+            <picture>
+              <source
+                srcset="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.53.15.avif"
+                type="image/avif"
+              />
+              <img
+                src="screenshots/Simulator%20Screenshot%20-%20iPhone%2017%20Pro%20Max%20-%202026-03-29%20at%2014.53.15.png"
+                alt="Special Edition CNY 2026 maze activity"
+                width="440"
+                height="956"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -175,27 +324,34 @@
         </div>
 
         <div class="merch-grid">
+          <!-- T-Shirt Carousel -->
           <div class="merch-card merch-card-carousel fade-up delay-1">
-            <div class="merch-carousel" data-merch-carousel>
-              <div class="merch-carousel-track" tabindex="0" aria-label="T-shirt images, swipe to see more">
-                <div class="merch-carousel-slide">
+            <div class="merch-carousel" data-merch-carousel aria-roledescription="carousel" aria-label="Capybara Squad T-shirt color variations">
+              <div class="merch-carousel-track" tabindex="0" aria-label="T-shirt images, swipe or click arrows to see more">
+                <div class="merch-carousel-slide" id="tshirt-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 3">
                   <img
                     src="store-images/Squad T-shirt.avif"
                     alt="Capybara Squad t-shirt in natural cotton"
+                    width="600"
+                    height="600"
                     loading="lazy"
                   />
                 </div>
-                <div class="merch-carousel-slide">
+                <div class="merch-carousel-slide" id="tshirt-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 3">
                   <img
                     src="store-images/Squad T-shirt Blue.avif"
                     alt="Capybara Squad t-shirt in blue"
+                    width="600"
+                    height="600"
                     loading="lazy"
                   />
                 </div>
-                <div class="merch-carousel-slide">
+                <div class="merch-carousel-slide" id="tshirt-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 3">
                   <img
                     src="store-images/Squad T-shirt Grey.avif"
                     alt="Capybara Squad t-shirt in grey"
+                    width="600"
+                    height="600"
                     loading="lazy"
                   />
                 </div>
@@ -222,36 +378,57 @@
             </a>
           </div>
 
+          <!-- Drinkware Carousel -->
           <div class="merch-card merch-card-carousel fade-up delay-2">
-            <div class="merch-carousel" data-merch-carousel>
-              <div class="merch-carousel-track" tabindex="0" aria-label="Drinkware images, swipe to see more">
-                <div class="merch-carousel-slide">
-                  <img
-                    src="store-images/Drink Like a Capybara Cermaic Mug.png"
-                    alt="Drink Like a Capybara ceramic mug"
-                    loading="lazy"
-                  />
+            <div class="merch-carousel" data-merch-carousel aria-roledescription="carousel" aria-label="Drink Like a Capybara drinkware options">
+              <div class="merch-carousel-track" tabindex="0" aria-label="Drinkware images, swipe or click arrows to see more">
+                <div class="merch-carousel-slide" id="drink-slide-1" role="group" aria-roledescription="slide" aria-label="1 of 4">
+                  <picture>
+                    <source srcset="store-images/Drink%20Like%20a%20Capybara%20Ceramic%20Mug.avif" type="image/avif" />
+                    <img
+                      src="store-images/Drink Like a Capybara Cermaic Mug.png"
+                      alt="Drink Like a Capybara ceramic mug"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
-                <div class="merch-carousel-slide">
-                  <img
-                    src="store-images/Drink Like a Capybara White Tumbler.png"
-                    alt="Drink Like a Capybara white tumbler"
-                    loading="lazy"
-                  />
+                <div class="merch-carousel-slide" id="drink-slide-2" role="group" aria-roledescription="slide" aria-label="2 of 4">
+                  <picture>
+                    <source srcset="store-images/Drink%20Like%20a%20Capybara%20White%20Tumbler.avif" type="image/avif" />
+                    <img
+                      src="store-images/Drink Like a Capybara White Tumbler.png"
+                      alt="Drink Like a Capybara white tumbler"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
-                <div class="merch-carousel-slide">
-                  <img
-                    src="store-images/Drink Like a Capybara Silver Tumbler.png"
-                    alt="Drink Like a Capybara silver tumbler"
-                    loading="lazy"
-                  />
+                <div class="merch-carousel-slide" id="drink-slide-3" role="group" aria-roledescription="slide" aria-label="3 of 4">
+                  <picture>
+                    <source srcset="store-images/Drink%20Like%20a%20Capybara%20Silver%20Tumbler.avif" type="image/avif" />
+                    <img
+                      src="store-images/Drink Like a Capybara Silver Tumbler.png"
+                      alt="Drink Like a Capybara silver tumbler"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
-                <div class="merch-carousel-slide">
-                  <img
-                    src="store-images/Drink Like a Capybara Water Bottle.png"
-                    alt="Drink Like a Capybara water bottle"
-                    loading="lazy"
-                  />
+                <div class="merch-carousel-slide" id="drink-slide-4" role="group" aria-roledescription="slide" aria-label="4 of 4">
+                  <picture>
+                    <source srcset="store-images/Drink%20Like%20a%20Capybara%20Water%20Bottle.avif" type="image/avif" />
+                    <img
+                      src="store-images/Drink Like a Capybara Water Bottle.png"
+                      alt="Drink Like a Capybara water bottle"
+                      width="600"
+                      height="600"
+                      loading="lazy"
+                    />
+                  </picture>
                 </div>
               </div>
 
@@ -276,6 +453,7 @@
             </a>
           </div>
 
+          <!-- Tote Card -->
           <a
             class="merch-card fade-up delay-1"
             href="https://cottonbureau.com/p/YY5TRF/tote/carry-like-a-capybara#/35068259/natural-100percent-cotton-canvas-15%22-16%22"
@@ -283,11 +461,16 @@
             rel="noopener noreferrer"
           >
             <div class="merch-media">
-              <img
-                src="store-images/Carry Like a Capybara.png"
-                alt="Carry Like a Capybara cotton canvas tote bag"
-                loading="lazy"
-              />
+              <picture>
+                <source srcset="store-images/Carry%20Like%20a%20Capybara.avif" type="image/avif" />
+                <img
+                  src="store-images/Carry Like a Capybara.png"
+                  alt="Carry Like a Capybara cotton canvas tote bag"
+                  width="600"
+                  height="600"
+                  loading="lazy"
+                />
+              </picture>
             </div>
             <div class="merch-body">
               <h3>Carry like a capybara</h3>
@@ -303,13 +486,16 @@
         <span class="decor decor-sm section-decor-tl float" aria-hidden="true">🎉</span>
         <span class="decor decor-sm section-decor-tr float delay-b" aria-hidden="true">🌟</span>
 
-        <img
-          class="app-icon"
-          src="AppIcon.png"
-          alt="Capybara Squad Games app icon"
-          width="88"
-          height="88"
-        />
+        <picture>
+          <source srcset="AppIcon.avif" type="image/avif" />
+          <img
+            class="app-icon"
+            src="AppIcon.png"
+            alt="Capybara Squad Games app icon"
+            width="88"
+            height="88"
+          />
+        </picture>
         <h2>Ready to join <span class="accent">the squad?</span></h2>
         <a
           class="app-store-button"
@@ -334,12 +520,50 @@
 
     </main>
 
+    <!-- Floating / Sticky Download Button for Scroll Conversion -->
+    <aside class="floating-cta" id="floatingCta" aria-label="Quick download" hidden>
+      <a
+        class="floating-cta-button"
+        href="https://apps.apple.com/us/app/capybara-squad-games/id6758884723"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download Capybara Squad Games on the App Store"
+      >
+        <picture>
+          <source srcset="AppIcon.avif" type="image/avif" />
+          <img src="AppIcon.png" alt="" width="28" height="28" class="floating-cta-icon" />
+        </picture>
+        <span class="floating-cta-text">
+          <span class="floating-cta-sub">Play Now on iOS</span>
+          <span class="floating-cta-title">Get Capybara Squad</span>
+        </span>
+        <svg class="floating-cta-arrow" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+        </svg>
+      </a>
+    </aside>
+
     <script>
-      // Operations paused notice
+      // Operations paused notice with localStorage dismissal memory
       (() => {
+        const STORAGE_KEY = 'capybara_ops_modal_dismissed_20261027';
         const modal = document.getElementById('opsModal');
         if (!modal) return;
-        const close = () => { if (modal.open) modal.close(); };
+
+        try {
+          if (localStorage.getItem(STORAGE_KEY) === 'true') {
+            return; // User has already acknowledged and dismissed the modal
+          }
+        } catch (e) {
+          // Fallback gracefully if localStorage is unavailable
+        }
+
+        const close = () => {
+          if (modal.open) modal.close();
+          try {
+            localStorage.setItem(STORAGE_KEY, 'true');
+          } catch (e) {}
+        };
 
         if (typeof modal.showModal === 'function') {
           modal.showModal();
@@ -347,12 +571,17 @@
           modal.setAttribute('open', '');
         }
 
-        modal.querySelector('.ops-modal-button').addEventListener('click', close);
+        const closeBtn = modal.querySelector('.ops-modal-button');
+        if (closeBtn) closeBtn.addEventListener('click', close);
         modal.addEventListener('click', (e) => {
           if (e.target === modal) close();
         });
+        modal.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape') close();
+        });
       })();
 
+      // Intersection Observer for fade-up animations
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -371,7 +600,26 @@
 
       document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
 
-      // Merch carousel
+      // Floating CTA visibility based on hero scroll position
+      (() => {
+        const floatingCta = document.getElementById('floatingCta');
+        const hero = document.querySelector('.hero-section');
+        if (!floatingCta || !hero) return;
+
+        const heroObserver = new IntersectionObserver((entries) => {
+          const entry = entries[0];
+          if (!entry) return;
+          if (!entry.isIntersecting) {
+            floatingCta.removeAttribute('hidden');
+          } else {
+            floatingCta.setAttribute('hidden', '');
+          }
+        }, { threshold: 0.1 });
+
+        heroObserver.observe(hero);
+      })();
+
+      // Merch carousel with accessible ARIA linking
       document.querySelectorAll('[data-merch-carousel]').forEach((carousel) => {
         const track = carousel.querySelector('.merch-carousel-track');
         const slides = Array.from(carousel.querySelectorAll('.merch-carousel-slide'));
@@ -380,13 +628,14 @@
         const next = carousel.querySelector('.merch-carousel-next');
         if (!track || slides.length === 0) return;
 
-        const dots = slides.map((_, i) => {
+        const dots = slides.map((slide, i) => {
           const dot = document.createElement('button');
           dot.type = 'button';
           dot.className = 'merch-carousel-dot';
           dot.setAttribute('role', 'tab');
           dot.setAttribute('aria-label', `Go to slide ${i + 1}`);
           dot.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+          if (slide.id) dot.setAttribute('aria-controls', slide.id);
           dot.addEventListener('click', () => scrollToIndex(i));
           dotsContainer.appendChild(dot);
           return dot;
@@ -434,6 +683,53 @@
         window.addEventListener('resize', updateActive);
         updateActive();
       });
+
+      // Interactive App Icon Emoji Burst Easter Egg
+      (() => {
+        const icon = document.getElementById('interactiveAppIcon');
+        const container = document.getElementById('emojiBurstContainer');
+        if (!icon || !container) return;
+
+        const emojis = ['🍊', '⭐', '✨', '🎈', '🎉', '🌿', '🧡'];
+
+        const triggerBurst = () => {
+          // Playful spring shake on icon
+          icon.animate([
+            { transform: 'scale(1) rotate(0deg)' },
+            { transform: 'scale(1.18) rotate(-8deg)' },
+            { transform: 'scale(0.95) rotate(4deg)' },
+            { transform: 'scale(1) rotate(0deg)' }
+          ], { duration: 450, easing: 'cubic-bezier(0.175, 0.885, 0.32, 1.275)' });
+
+          for (let i = 0; i < 10; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'burst-particle';
+            particle.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+            // Random angle and distance
+            const angle = Math.random() * Math.PI * 2;
+            const distance = 60 + Math.random() * 80;
+            const dx = Math.cos(angle) * distance;
+            const dy = Math.sin(angle) * distance;
+            const rot = (Math.random() - 0.5) * 120;
+
+            particle.style.setProperty('--dx', `${dx}px`);
+            particle.style.setProperty('--dy', `${dy}px`);
+            particle.style.setProperty('--rot', `${rot}deg`);
+
+            container.appendChild(particle);
+            particle.addEventListener('animationend', () => particle.remove(), { once: true });
+          }
+        };
+
+        icon.addEventListener('click', triggerBurst);
+        icon.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            triggerBurst();
+          }
+        });
+      })();
     </script>
   </body>
 </html>
